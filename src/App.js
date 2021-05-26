@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./parts/Header/Header";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import {GlobalStyle} from "./StyledApp";
+import ShoppingBasket from "./pages/ShoppingBasket/ShoppingBasket";
+import Home from "./pages/Home/Home";
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {setResize} from "./redux/Slices/UtilsSlice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch()
+
+    const scrollHandler = () => {
+        const scroll = window.scrollY
+        if (scroll === 0) {
+            dispatch(setResize(false))
+        } else {
+            dispatch(setResize(true))
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('scroll', scrollHandler)
+        // return () => {
+        //     document.removeEventListener('scroll', scrollHandler)
+        // }
+    })
+
+    return (
+        <Router>
+            <GlobalStyle/>
+            <Header/>
+            <Route exact path={"/"} component={Home}/>
+            <Route exact path={"/cart"} component={ShoppingBasket}/>
+        </Router>
+    );
 }
 
 export default App;

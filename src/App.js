@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import {GlobalStyle} from "./StyledApp";
 import ShoppingBasket from "./pages/ShoppingBasket/ShoppingBasket";
 import ProductPage from "./pages/ProductPage/ProductPage";
-import {useEffect, useLayoutEffect} from "react";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setResize} from "./redux/Slices/UtilsSlice";
 import productItemData from './data.json'

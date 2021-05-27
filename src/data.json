@@ -1,6 +1,11 @@
 {
   "id": 0,
   "name": "Just Milk Semi-Skimmed 6 x 1L (Case of 2)",
+  "images": [
+    "https://ogorod-foodmarket.ru/image/catalog/molochnye-produkty/moloko/6/428083220-moloko-prostokvashino-2-5-930-ml.png",
+    "https://ogorod-foodmarket.ru/image/catalog/molochnye-produkty/moloko/6/428083220-moloko-prostokvashino-2-5-930-ml.png",
+    "https://ogorod-foodmarket.ru/image/catalog/molochnye-produkty/moloko/6/428083220-moloko-prostokvashino-2-5-930-ml.png"
+  ],
   "countPrice": "1 pc / £1.59",
   "price": "£1.59",
   "nutrition": {

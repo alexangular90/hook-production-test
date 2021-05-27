@@ -19,7 +19,7 @@ export const StyledContent = styled.div`
 export const ProductImage = styled.img`
   object-fit: contain;
   height: ${props => props.small ? "100px" : "190px"};
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 `
 
 export const ProductHeader = styled.div`

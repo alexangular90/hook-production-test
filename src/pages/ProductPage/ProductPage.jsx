@@ -4,7 +4,7 @@ import ProductCart from "../../components/ProductCart/ProductCard";
 const ProductPage = (product) => {
     return (
         <StyledProductPageWrapper>
-            <ProductCart {...product}/>
+            <ProductCart product={product} {...product}/>
             <BuyWithThisProduct>
                 <span>Buy with this product</span>
                 <ScrollArea>

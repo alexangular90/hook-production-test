@@ -23,6 +23,7 @@ export const Content = styled.header`
   position: fixed;
   top: 0;
   background-color: #FCAE00;
+  z-index: 2;
 `
 
 export const Back = styled.img`

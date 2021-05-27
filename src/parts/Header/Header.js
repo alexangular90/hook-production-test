@@ -1,4 +1,4 @@
-import {Back, Content, ShadowLayout, StyledHeader, Title} from "./StyledHeader";
+import {Back, Content, StyledHeader, Title} from "./StyledHeader";
 import backArrow from '../../assets/svgIcons/backArrow.svg'
 import {useSelector} from "react-redux";
 

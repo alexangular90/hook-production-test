@@ -2,11 +2,11 @@
   "id": 0,
   "name": "Just Milk Semi-Skimmed 6 x 1L (Case of 2)",
   "images": [
-    "https://ogorod-foodmarket.ru/image/catalog/molochnye-produkty/moloko/6/428083220-moloko-prostokvashino-2-5-930-ml.png",
-    "https://ogorod-foodmarket.ru/image/catalog/molochnye-produkty/moloko/6/428083220-moloko-prostokvashino-2-5-930-ml.png",
-    "https://ogorod-foodmarket.ru/image/catalog/molochnye-produkty/moloko/6/428083220-moloko-prostokvashino-2-5-930-ml.png"
+    "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3052/3052548H.jpg?mtime=60743913",
+    "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3052/3052548_1H.jpg?mtime=60743913",
+    "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3052/3052548_2H.jpg?mtime=60743913"
   ],
-  "countPrice": "1 pc / £1.59",
+  "countPrice": "3 pc / £6.59",
   "price": "£1.59",
   "nutrition": {
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. ",
@@ -50,21 +50,36 @@
   "buyWithThisProduct": [
     {
       "id": 6,
-      "name": "Best-in 10 British Big Eggs",
-      "countPrice": "1 pc / £3.59",
+      "name": "Squash and tofu korma",
+      "images": [
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3417/3417640H.jpg?mtime=5fb4d604",
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3417/3417640_1H.jpg?mtime=5fb4d604"
+      ],
+      "countPrice": "1 pc / £2.59",
       "price": "£5.59"
     },
     {
       "id": 7,
-      "name": "Best-in 10 British Big Eggs",
-      "countPrice": "1 pc / £1.59",
+      "name": "Goat and peanut vindaloo",
+      "images": [
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3351/3351799H.jpg?mtime=5f15b20c",
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3351/3351799_1H.jpg?mtime=5f15b20c",
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3351/3351799_2H.jpg?mtime=5f15b20c"
+      ],
+      "countPrice": "2 pc / £7.59",
       "price": "£3.59"
     },
     {
       "id": 8,
-      "name": "Just Milk Semi-Skimmed 6 x 1L (Case of 2)",
-      "countPrice": "1 pc / £1.59",
-      "price": "£2.59"
+      "name": "Cod and duck curry",
+      "images": [
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3406/3406686H.jpg?mtime=5f2826e2",
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3406/3406686_1H.jpg?mtime=5f284305",
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3406/3406686_2H.jpg?mtime=5f284305",
+        "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3406/3406686_3H.jpg?mtime=5f284305"
+      ],
+      "countPrice": "1 pc / £5.59",
+      "price": "£12.59"
     }
   ],
   "ingredients": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. ",

@@ -6,21 +6,17 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
 
 import "./SwiperCStyle.css";
-import {useSelector} from "react-redux";
 import {ProductImage} from "../ProductCart/StyledProductCart";
 
 SwiperCore.use([Pagination]);
 
-const SwiperC = ({small}) => {
-    const images = useSelector(state => state.productData.product.images)
-
+const SwiperC = ({small, images}) => {
     return (
         <Swiper pagination={true} className="mySwiper">
-            {images.map(item =>
-                <SwiperSlide>
+            {images?.map((item, index) =>
+                <SwiperSlide key={index}>
                     <ProductImage small={small} src={item}/>
-                </SwiperSlide>
-            )}
+                </SwiperSlide>)}
         </Swiper>
     )
 }

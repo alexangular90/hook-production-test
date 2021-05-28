@@ -1,12 +1,14 @@
 import {configureStore} from '@reduxjs/toolkit'
 import utilsSlice from "./Slices/UtilsSlice";
 import productSlice from "./Slices/ProductItemSlice";
+import trashSlice from "./Slices/trashSlice";
 
 export const store = configureStore({
     reducer: {
         utils: utilsSlice,
-        productData: productSlice
-    },
+        productData: productSlice,
+        trashData: trashSlice
+    }
 })
 
 export default store;

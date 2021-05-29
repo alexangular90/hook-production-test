@@ -27,13 +27,31 @@ const ProductCart = ({name, countPrice, price, small, id, images, count}) => {
         count: 0
     }
 
-    const onAddItem = async () => {
-        dispatch(setItems(itemRef))
-    }
+    const array = [];
 
-    const onDeleteItem = () => {
-        dispatch(deleteItem(itemRef))
+    Array.prototype.contains = function (item) {
+        return this.some(el => el.id === item.id);
     }
+    const addItem = () => {
+        if (array.contains(itemRef)) array.find(el => el.id === itemRef.id).count++;
+        else array.push(itemRef);
+    }
+    //
+    // const itemRef = {
+    //     name: name,
+    //     countPrice: countPrice,
+    //     price: price,
+    //     id: id,
+    //     count: 0
+    // }
+    //
+    // const onAddItem = () => {
+    //     dispatch(setItems(itemRef))
+    // }
+    //
+    // const onDeleteItem = () => {
+    //     dispatch(deleteItem(itemRef))
+    // }
 
     return (
         <StyledCart small={small}>
@@ -47,9 +65,9 @@ const ProductCart = ({name, countPrice, price, small, id, images, count}) => {
                 <ProductFooter small={small}>
                     <Price children={price} small={small}/>
                     <ShopActions>
-                        <Button onClick={onDeleteItem} small={small} secondary img={trashIcon}/>
+                        <Button small={small} secondary img={trashIcon}/>
                         <span>{count}</span>
-                        <Button onClick={onAddItem} small={small} img={addIcon}/>
+                        <Button onClick={addItem} small={small} img={addIcon}/>
                     </ShopActions>
                 </ProductFooter>
                 {small

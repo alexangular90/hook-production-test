@@ -8,17 +8,21 @@ export const trashSlice = createSlice({
     },
     reducers: {
         setItems(state, action) {
-            state.items.push(action.payload)
-            const uniqueItems = new Set()
-            state.items.forEach(item => {
-                uniqueItems.add(JSON.stringify(item))
-            })
+            // state.items.push(action.payload)
+            // const uniqueItems = new Set()
+            // state.items.forEach(item => {
+            //     uniqueItems.add(JSON.stringify(item))
+            // })
+            //
+            // const newItems = []
+            // uniqueItems.forEach(item => {
+            //     newItems.push(JSON.parse(item))
+            // })
+            // state.items = newItems
 
-            const newItems = []
-            uniqueItems.forEach(item => {
-                newItems.push(JSON.parse(item))
-            })
-            state.items = newItems
+            const tmp = state.items;
+            tmp.addItem(action.payload)
+            state.items = tmp
         },
         deleteItem(state, action) {
             const uniqueItems = new Set()

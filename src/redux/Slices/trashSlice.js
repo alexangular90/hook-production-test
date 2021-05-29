@@ -36,20 +36,6 @@ export const trashSlice = createSlice({
                 newItems.push(JSON.parse(item))
             })
             state.items = newItems
-        },
-        incCount(state, action) {
-            const uniqueItems = new Set()
-            state.items.forEach(item => {
-                uniqueItems.add(JSON.stringify({
-                    name: item.name,
-                    count: item.count + 1
-                }))
-            })
-            const newItems = []
-            uniqueItems.forEach(item => {
-                newItems.push(JSON.parse(item))
-            })
-            state.items = newItems
         }
     }
 })

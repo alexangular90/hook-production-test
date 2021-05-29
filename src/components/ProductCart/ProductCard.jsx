@@ -12,15 +12,12 @@ import trashIcon from '../../assets/svgIcons/trash.svg'
 import addIcon from '../../assets/svgIcons/add.svg'
 import Button from "../Button/Button";
 import SwiperC from "../Swiper/SwiperC";
-import {useDispatch, useSelector} from "react-redux";
-import {deleteItem, setItems, incCount} from "../../redux/Slices/trashSlice";
-import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {deleteItem, setItems} from "../../redux/Slices/trashSlice";
 
 
-const ProductCart = ({name, countPrice, price, small, id, images}) => {
+const ProductCart = ({name, countPrice, price, small, id, images, count}) => {
     const dispatch = useDispatch()
-    // const count = useSelector(state => state.trashData.count)
-    const [count, setCount] = useState(0)
 
     const itemRef = {
         name: name,

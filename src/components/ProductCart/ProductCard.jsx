@@ -18,24 +18,21 @@ import {useEffect, useState} from "react";
 
 const ProductCart = ({name, countPrice, price, small, id, images}) => {
     const dispatch = useDispatch()
-    const [count, setCount] = useState(0)
+    const items = useSelector(state => state.trashData.items)
 
     const itemRef = {
         name: name,
         countPrice: countPrice,
         price: price,
-        id: id,
-        count: 0
+        id: id
     }
 
     const addItem = () => {
         dispatch(setItems(itemRef))
-        setCount(count + 1)
     }
 
     const delItem = () => {
         dispatch(deleteItem(itemRef))
-        setCount(count - 1)
     }
 
     return (
@@ -51,7 +48,7 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
                     <Price children={price} small={small}/>
                     <ShopActions>
                         <Button onClick={delItem} small={small} secondary img={trashIcon}/>
-                        <span>{count}</span>
+                        <span>{items.length ? items.map(item => item.id === id ? item.count : "0") : 0}</span>
                         <Button onClick={addItem} small={small} img={addIcon}/>
                     </ShopActions>
                 </ProductFooter>

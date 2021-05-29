@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit'
 Array.prototype.addItem = function (item) {
     const el = this.find(el => el.id === item.id);
     if (el) el.count++;
-    else this.push(item);
+    else this.push(Object.assign(item, {count: 1}));
 }
 
 Array.prototype.deleteItem = function (item) {

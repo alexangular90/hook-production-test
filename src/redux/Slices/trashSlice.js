@@ -9,12 +9,51 @@ export const trashSlice = createSlice({
     reducers: {
         setItems(state, action) {
             state.items.push(action.payload)
-            action.payload.count += 1
-            state.totalCount = state.items.length
+            const uniqueItems = new Set()
+            state.items.forEach(item => {
+                uniqueItems.add(JSON.stringify(item))
+            })
+
+            const newItems = []
+            uniqueItems.forEach(item => {
+                newItems.push(JSON.parse(item))
+            })
+            state.items = newItems
+        },
+        deleteItem(state, action) {
+            const uniqueItems = new Set()
+            state.items.forEach(item => {
+                uniqueItems.add(JSON.stringify(item))
+            })
+            if (uniqueItems.has(JSON.stringify(action.payload))) {
+                if (action.payload.count > 0) action.payload.count -= 1
+                else {
+                    uniqueItems.delete(JSON.stringify(action.payload))
+                }
+            }
+            const newItems = []
+            uniqueItems.forEach(item => {
+                newItems.push(JSON.parse(item))
+            })
+            state.items = newItems
+        },
+        incCount(state, action) {
+            const uniqueItems = new Set()
+            state.items.forEach(item => {
+                uniqueItems.add(JSON.stringify({
+                    name: item.name,
+                    count: item.count + 1
+                }))
+            })
+            const newItems = []
+            uniqueItems.forEach(item => {
+                newItems.push(JSON.parse(item))
+            })
+            state.items = newItems
         }
     }
 })
 
-export const {setItems} = trashSlice.actions
+export const {setItems, deleteItem, incCount} = trashSlice.actions
 
 export default trashSlice.reducer

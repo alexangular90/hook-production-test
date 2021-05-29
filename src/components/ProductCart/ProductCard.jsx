@@ -12,14 +12,15 @@ import trashIcon from '../../assets/svgIcons/trash.svg'
 import addIcon from '../../assets/svgIcons/add.svg'
 import Button from "../Button/Button";
 import SwiperC from "../Swiper/SwiperC";
-import {useDispatch} from "react-redux";
-import {setItems} from "../../redux/Slices/trashSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {deleteItem, setItems, incCount} from "../../redux/Slices/trashSlice";
 import {useState} from "react";
 
 
 const ProductCart = ({name, countPrice, price, small, id, images}) => {
-    const [count, setCount] = useState(0)
     const dispatch = useDispatch()
+    // const count = useSelector(state => state.trashData.count)
+    const [count, setCount] = useState(0)
 
     const itemRef = {
         name: name,
@@ -29,9 +30,12 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
         count: 0
     }
 
-    const onAddItem = () => {
-        setCount(count + 1)
+    const onAddItem = async () => {
         dispatch(setItems(itemRef))
+    }
+
+    const onDeleteItem = () => {
+        dispatch(deleteItem(itemRef))
     }
 
     return (
@@ -46,7 +50,7 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
                 <ProductFooter small={small}>
                     <Price children={price} small={small}/>
                     <ShopActions>
-                        <Button small={small} secondary img={trashIcon}/>
+                        <Button onClick={onDeleteItem} small={small} secondary img={trashIcon}/>
                         <span>{count}</span>
                         <Button onClick={onAddItem} small={small} img={addIcon}/>
                     </ShopActions>

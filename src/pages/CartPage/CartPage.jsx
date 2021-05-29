@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {checkUniqueItems} from "../../services/checkUniqueItems";
 
 
-const ShoppingBasket = () => {
+const CartPage = () => {
     const [newItems, setNewItems] = useState([])
     const items = useSelector(state => state.trashData.items)
 
@@ -17,4 +17,4 @@ const ShoppingBasket = () => {
         </ul>
     )
 }
-export default ShoppingBasket
+export default CartPage

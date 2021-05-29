@@ -1,7 +1,7 @@
 import Header from "./parts/Header/Header";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {GlobalStyle} from "./StyledApp";
-import ShoppingBasket from "./pages/ShoppingBasket/ShoppingBasket";
+import CartPage from "./pages/CartPage/CartPage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -33,7 +33,7 @@ function App() {
             <Route exact path={"/"}>
                 <ProductPage {...product}/>
             </Route>
-            <Route exact path={"/cart"} component={ShoppingBasket}/>
+            <Route exact path={"/cart"} component={CartPage}/>
         </Router>
     );
 }

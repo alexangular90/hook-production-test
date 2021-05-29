@@ -1,5 +1,19 @@
 import {createSlice} from '@reduxjs/toolkit'
 
+Array.prototype.addItem = function (item) {
+    const el = this.find(el => el.id === item.id);
+    if (el) el.count++;
+    else this.push(item);
+}
+
+Array.prototype.deleteItem = function (item) {
+    const el = this.find(el => el.id === item.id);
+    if (el) {
+        if (el.count > 1) el.count--;
+        else this.splice(this.indexOf(el), 1)
+    }
+}
+
 export const trashSlice = createSlice({
     name: 'trashSlice',
     initialState: {
@@ -8,38 +22,10 @@ export const trashSlice = createSlice({
     },
     reducers: {
         setItems(state, action) {
-            // state.items.push(action.payload)
-            // const uniqueItems = new Set()
-            // state.items.forEach(item => {
-            //     uniqueItems.add(JSON.stringify(item))
-            // })
-            //
-            // const newItems = []
-            // uniqueItems.forEach(item => {
-            //     newItems.push(JSON.parse(item))
-            // })
-            // state.items = newItems
-
-            const tmp = state.items;
-            tmp.addItem(action.payload)
-            state.items = tmp
+            state.items.addItem(action.payload)
         },
         deleteItem(state, action) {
-            const uniqueItems = new Set()
-            state.items.forEach(item => {
-                uniqueItems.add(JSON.stringify(item))
-            })
-            if (uniqueItems.has(JSON.stringify(action.payload))) {
-                if (action.payload.count > 0) action.payload.count -= 1
-                else {
-                    uniqueItems.delete(JSON.stringify(action.payload))
-                }
-            }
-            const newItems = []
-            uniqueItems.forEach(item => {
-                newItems.push(JSON.parse(item))
-            })
-            state.items = newItems
+            state.items.deleteItem(action.payload)
         }
     }
 })

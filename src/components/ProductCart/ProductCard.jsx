@@ -24,8 +24,7 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
         name: name,
         countPrice: countPrice,
         price: price,
-        id: id,
-        count: 0
+        id: id
     }
 
     const addItem = () => {

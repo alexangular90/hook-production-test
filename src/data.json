@@ -7,7 +7,7 @@
     "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3052/3052548_2H.jpg?mtime=60743913"
   ],
   "countPrice": "3 pc / £6.59",
-  "price": "£1.59",
+  "price": 1.59,
   "nutrition": {
     "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. ",
     "points": [
@@ -56,7 +56,7 @@
         "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3417/3417640_1H.jpg?mtime=5fb4d604"
       ],
       "countPrice": "1 pc / £2.59",
-      "price": "£5.59"
+      "price": 5.59
     },
     {
       "id": 7,
@@ -67,7 +67,7 @@
         "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3351/3351799_2H.jpg?mtime=5f15b20c"
       ],
       "countPrice": "2 pc / £7.59",
-      "price": "£3.59"
+      "price": 3.59
     },
     {
       "id": 8,
@@ -79,7 +79,7 @@
         "https://gcdn.utkonos.ru/resample/500x500q90/images/photo/3406/3406686_3H.jpg?mtime=5f284305"
       ],
       "countPrice": "1 pc / £5.59",
-      "price": "£12.59"
+      "price": 12.59
     }
   ],
   "ingredients": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. ",

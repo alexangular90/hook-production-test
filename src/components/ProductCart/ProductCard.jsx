@@ -13,7 +13,7 @@ import addIcon from '../../assets/svgIcons/add.svg'
 import Button from "../Button/Button";
 import SwiperC from "../Swiper/SwiperC";
 import {useDispatch, useSelector} from "react-redux";
-import {deleteItem, setItems} from "../../redux/Slices/trashSlice";
+import {deleteItem, setItems, sumItem} from "../../redux/Slices/CartSlice";
 import {useEffect, useState} from "react";
 
 const ProductCart = ({name, countPrice, price, small, id, images}) => {
@@ -24,7 +24,8 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
         name: name,
         countPrice: countPrice,
         price: price,
-        id: id
+        id: id,
+        count: 1
     }
 
     const addItem = () => {
@@ -48,7 +49,7 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
                     <Price children={price} small={small}/>
                     <ShopActions>
                         <Button onClick={delItem} small={small} secondary img={trashIcon}/>
-                        <span>{items.length ? items.map(item => item.id === id ? item.count : "0") : 0}</span>
+                        <span>{items.length ? items.map(item => item.id === id ? item.count : 0) : 0}</span>
                         <Button onClick={addItem} small={small} img={addIcon}/>
                     </ShopActions>
                 </ProductFooter>

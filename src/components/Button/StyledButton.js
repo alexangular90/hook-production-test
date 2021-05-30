@@ -11,4 +11,5 @@ export const StyledButton = styled.button`
   background-position: center;
   background-size:${props => props.small ? "10px" : "16px"};
   color: white;
+  font-weight: 500;
 `

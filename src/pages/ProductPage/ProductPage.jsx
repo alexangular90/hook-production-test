@@ -1,8 +1,6 @@
 import {BuyWithThisProduct, ScrollArea, StyledProductPageWrapper} from "./StyledProductPage";
 import ProductCart from "../../components/ProductCart/ProductCard";
 import TrashPopup from "../../parts/trashPopup/TrashPopup";
-import {useSelector} from "react-redux";
-import {useState} from "react";
 
 const ProductPage = (product) => {
 

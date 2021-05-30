@@ -18,14 +18,14 @@ import {useEffect, useState} from "react";
 
 const ProductCart = ({name, countPrice, price, small, id, images}) => {
     const dispatch = useDispatch()
-    const items = useSelector(state => state.trashData.items)
+    const items = useSelector(state => state.cartData.items)
 
     const itemRef = {
         name: name,
         countPrice: countPrice,
         price: price,
         id: id,
-        count: 1
+        count: 0
     }
 
     const addItem = () => {
@@ -49,7 +49,7 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
                     <Price children={price} small={small}/>
                     <ShopActions>
                         <Button onClick={delItem} small={small} secondary img={trashIcon}/>
-                        <span>{items.length ? items.map(item => item.id === id ? item.count : 0) : 0}</span>
+                        <span>{(items.find(el => el.id === id) || {count: 0}).count}</span>
                         <Button onClick={addItem} small={small} img={addIcon}/>
                     </ShopActions>
                 </ProductFooter>

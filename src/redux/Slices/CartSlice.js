@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+
 const bigDecimal = require('js-big-decimal');
 
 Array.prototype.addItem = function (item) {
@@ -15,38 +16,40 @@ Array.prototype.deleteItem = function (item) {
     }
 }
 
-const calculateSum = (number1, number2, totalCount) => {
-    if (totalCount > 0) {
-        return bigDecimal.add(number1, number2)
-    } else if (totalCount <= 0) {
-        return 0
+const decrement = (array, item, totalPrice) => {
+    let el = array.find(el => el.id === item.id);
+    if (el) {
+        return bigDecimal.subtract(totalPrice, el.price)
     } else {
-        return bigDecimal.subtract(number1, number2)
+        return totalPrice - el.price
     }
 }
 
-const getTotalCount = arr => arr.reduce((sum, obj) => obj.count + sum, 0)
+const increment = (item, totalPrice) => {
+    return bigDecimal.add(totalPrice, item.price)
+}
 
 export const cartSlice = createSlice({
     name: 'cartSlice',
     initialState: {
         items: [],
         totalCount: 0,
-        totalPrice: null
+        totalPrice: 0
     },
     reducers: {
         setItems(state, action) {
             state.items.addItem(action.payload)
             state.totalCount++
-            state.totalPrice = calculateSum(state.totalPrice, action.payload.price, state.totalCount)
+            state.totalPrice = increment(action.payload, state.totalPrice)
         },
         deleteItem(state, action) {
+            state.totalPrice = decrement(state.items, action.payload, state.totalPrice)
             state.items.deleteItem(action.payload)
             if (state.totalCount === 0) state.totalCount = 0
             else {
                 state.totalCount--
             }
-            state.totalPrice = calculateSum(state.totalPrice, action.payload.price, state.totalCount)
+
         }
     }
 })

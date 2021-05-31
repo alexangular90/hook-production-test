@@ -13,8 +13,7 @@ import addIcon from '../../assets/svgIcons/add.svg'
 import Button from "../Button/Button";
 import SwiperC from "../Swiper/SwiperC";
 import {useDispatch, useSelector} from "react-redux";
-import {deleteItem, setItems, sumItem} from "../../redux/Slices/CartSlice";
-import {useEffect, useState} from "react";
+import {deleteItem, setItems} from "../../redux/Slices/CartSlice";
 
 const ProductCart = ({name, countPrice, price, small, id, images}) => {
     const dispatch = useDispatch()
@@ -45,10 +44,14 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
                 <Name children={name} small={small}/>
                 <CountPrice children={countPrice} small={small}/>
                 <ProductFooter small={small}>
-                    <Price children={price} small={small}/>
+                    <Price children={`£ ${price}`} small={small}/>
                     <ShopActions>
-                        <Button onClick={delItem} small={small} secondary img={trashIcon}/>
-                        <span>{(items.find(el => el.id === id) || {count: 0}).count}</span>
+                        {(items.find(el => el.id === id ? el.count.length !== 0 : false))
+                            ? <>
+                                <Button onClick={delItem} small={small} secondary img={trashIcon}/>
+                                <span>{(items.find(el => el.id === id) || {count: 0}).count}</span>
+                            </>
+                            : <span>Add</span>}
                         <Button onClick={addItem} small={small} img={addIcon}/>
                     </ShopActions>
                 </ProductFooter>

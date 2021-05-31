@@ -7,11 +7,13 @@ const TrashPopup = () => {
     const totalPrice = useSelector(state => state.cartData.totalPrice)
 
     return (
-        <>{totalPrice
+        <>{Math.trunc(totalPrice)
             ? <StyledWrapper>
                 <StyledContent>
                     <StyledInfo>
-                        <img src={speed} alt="speed-delivery"/>
+                        <div>
+                            <img src={speed} alt="speed-delivery"/>
+                        </div>
                         <div>
                             <span>Delivery:</span>
                             <span>25-30 min</span>
@@ -25,7 +27,6 @@ const TrashPopup = () => {
                     </StyledInfo>
                     <StyledCheckout children={"Checkout"}/>
                 </StyledContent>
-
             </StyledWrapper>
             : <></>}
         </>

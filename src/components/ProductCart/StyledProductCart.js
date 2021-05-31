@@ -69,7 +69,13 @@ export const ShopActions = styled.div`
   display: flex;
   align-items: center;
   
+  span:first-child {
+    color: #FFBC41;
+    font-weight: bold;
+  }
+  
   > span {
+    font-weight: bold;
     padding-left: 12px;
     padding-right: 12px;
   }

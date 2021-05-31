@@ -35,8 +35,14 @@ export const StyledCheckout = styled(StyledButton)`
 export const StyledInfo = styled.div`
   display: flex;
   
+  > span {
+    
+  }
+  
   > img {
     margin-right: 10px;
+    align-items: center;
+    
   }
 
   > div {

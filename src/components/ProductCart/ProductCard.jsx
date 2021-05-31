@@ -15,12 +15,13 @@ import SwiperC from "../Swiper/SwiperC";
 import {useDispatch, useSelector} from "react-redux";
 import {deleteItem, setItems} from "../../redux/Slices/CartSlice";
 
-const ProductCart = ({name, countPrice, price, small, id, images}) => {
+const ProductCart = ({name, countPrice, price, small, id, images, cart}) => {
     const dispatch = useDispatch()
     const items = useSelector(state => state.cartData.items)
 
     const itemRef = {
         name: name,
+        images: images,
         countPrice: countPrice,
         price: price,
         id: id
@@ -35,27 +36,31 @@ const ProductCart = ({name, countPrice, price, small, id, images}) => {
     }
 
     return (
-        <StyledCart small={small}>
-            <StyledContent small={small}>
-                {small ? <></> :
+        <StyledCart cart={cart} small={small}>
+            <StyledContent small={small} cart={cart}>
+                {small || cart ? <></> :
                     <ProductHeader>{svgIcons.map((item, index) => <span
                         key={index}>{item.path}</span>)}</ProductHeader>}
-                <SwiperC images={images} small={small}/>
-                <Name children={name} small={small}/>
-                <CountPrice children={countPrice} small={small}/>
-                <ProductFooter small={small}>
-                    <Price children={`£ ${price}`} small={small}/>
-                    <ShopActions>
-                        {(items.find(el => el.id === id ? el.count.length !== 0 : false))
-                            ? <>
-                                <Button onClick={delItem} small={small} secondary img={trashIcon}/>
-                                <span>{(items.find(el => el.id === id) || {count: 0}).count}</span>
-                            </>
-                            : <span>Add</span>}
-                        <Button onClick={addItem} small={small} img={addIcon}/>
-                    </ShopActions>
-                </ProductFooter>
-                {small
+                <SwiperC cart={cart} images={images} small={small}/>
+                <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
+                    <Name children={name} small={small}/>
+                    <ProductFooter cart={cart} small={small}>
+                        <div style={{display: "flex"}}>
+                            <CountPrice children={countPrice} small={small}/>
+                            <Price children={`£ ${price}`} small={small} cart={cart}/>
+                        </div>
+                        <ShopActions>
+                            {(items.find(el => el.id === id ? el.count.length !== 0 : false))
+                                ? <>
+                                    <Button onClick={delItem} small={small} secondary img={trashIcon}/>
+                                    <span>{(items.find(el => el.id === id) || {count: 0}).count}</span>
+                                </>
+                                : <span>Add</span>}
+                            <Button onClick={addItem} small={small} img={addIcon}/>
+                        </ShopActions>
+                    </ProductFooter>
+                </div>
+                {small || cart
                     ? <></>
                     : <ProductActions>
                         <span>Nutrition</span>

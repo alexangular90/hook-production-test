@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 16px;
     background-color: #F5F4F2;
+    font-family: "Noto Sans", sans-serif;
   }
 
   @font-face {

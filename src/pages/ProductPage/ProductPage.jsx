@@ -1,9 +1,8 @@
 import {BuyWithThisProduct, ScrollArea, StyledProductPageWrapper} from "./StyledProductPage";
 import ProductCart from "../../components/ProductCart/ProductCard";
-import TrashPopup from "../../parts/trashPopup/TrashPopup";
+import CartPopup from "../../parts/CartPopup/CartPopup";
 
 const ProductPage = (product) => {
-
     return (
         <StyledProductPageWrapper>
             <ProductCart {...product}/>
@@ -23,7 +22,7 @@ const ProductPage = (product) => {
             <div>
                 Other
             </div>
-            <TrashPopup/>
+            <CartPopup/>
         </StyledProductPageWrapper>
     )
 }

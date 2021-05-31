@@ -8,6 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setResize} from "./redux/Slices/UtilsSlice";
 import productItemData from './data.json'
 import {setProduct} from "./redux/Slices/ProductItemSlice";
+import CartPopup from "./parts/CartPopup/CartPopup";
 
 function App() {
     const dispatch = useDispatch()
@@ -34,6 +35,7 @@ function App() {
                 <ProductPage {...product}/>
             </Route>
             <Route exact path={"/cart"} component={CartPage}/>
+            <CartPopup/>
         </Router>
     );
 }

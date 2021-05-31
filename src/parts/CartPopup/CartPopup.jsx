@@ -1,10 +1,13 @@
 import {useSelector} from "react-redux";
-import {StyledCheckout, StyledContent, StyledInfo, StyledWrapper} from "./StyledTrashPopup";
+import {StyledCheckout, StyledContent, StyledInfo, StyledWrapper} from "./StyledCartPopup";
 
 import speed from '../../assets/svgIcons/speed.svg'
+import {Link, useLocation} from "react-router-dom";
 
-const TrashPopup = () => {
+const CartPopup = () => {
     const totalPrice = useSelector(state => state.cartData.totalPrice)
+    const location = useLocation()
+
 
     return (
         <>{Math.trunc(totalPrice)
@@ -25,7 +28,9 @@ const TrashPopup = () => {
                             <span>£ {totalPrice}</span>
                         </div>
                     </StyledInfo>
-                    <StyledCheckout children={"Checkout"}/>
+                    <Link to={"/cart"}>
+                        <StyledCheckout children={location.pathname === '/' ? 'Checkout' : 'Pay'}/>
+                    </Link>
                 </StyledContent>
             </StyledWrapper>
             : <></>}
@@ -33,4 +38,4 @@ const TrashPopup = () => {
     )
 }
 
-export default TrashPopup
+export default CartPopup

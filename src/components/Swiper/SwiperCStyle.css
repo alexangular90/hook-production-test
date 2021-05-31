@@ -5,6 +5,7 @@
 .swiper-container {
     width: 100%;
     height: 100%;
+    margin-bottom: 10px;
 }
 
 .swiper-slide {
@@ -32,4 +33,8 @@
     border-radius: 5px;
     width: 17px;
     transition: 0.3s;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
 }

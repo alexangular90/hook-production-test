@@ -4,15 +4,16 @@ export const StyledCart = styled.div`
   width: 100%;
   background-color: white;
   border-radius: 8px;
-  margin-bottom: 24px;
+  margin-bottom: ${props => props.cart ? "0" : "24px"};
+  border-bottom: ${props => props.cart ? "unset" : "1px solid #F4F3F3"};
 `
 
 export const StyledContent = styled.div`
   display: flex;
-  min-height: ${props => props.small ? "228px" : "460px"};
+  max-height: ${props => props.small ? "228px" : "460px"};
   width: ${props => props.small ? "152px" : ""};
-  flex-direction: column;
-  padding: 10px 16px 10px 16px;
+  flex-direction: ${props => props.cart ? "row" : "column"};;
+  padding: ${props => props.cart ? "12px 14px 12px 14px" : "10px 16px 10px 16px"};
   font-family: "Noto Sans Regular", sans-serif;
 `
 
@@ -40,9 +41,11 @@ export const ProductHeader = styled.div`
 export const Name = styled.span`
   font-size: ${props => props.small ? "0.8125em" : "1em"};
   margin-bottom: 13px;
+  height: ${props => props.small ? "36px" : "41px"};
+  width: 80%;
 `
 export const CountPrice = styled.span`
-  font-size: ${props => props.small ? "0.75em" : "1em"};
+  font-size: ${props => props.small || props.cart ? "0.75em" : "1em"};
   font-family: "Noto Sans Regular", sans-serif;
   margin-bottom: 7px;
   color: #999999;
@@ -52,7 +55,7 @@ export const Price = styled.span`
   font-family: "Mukta", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: ${props => props.small ? "1em" : "1.875em"};
+  font-size: ${props => props.small || props.cart ? "1em" : "1.875em"};
 `
 
 
@@ -60,15 +63,16 @@ export const ProductFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: ${props => props.small ? "unset" : "13px"};
-  margin-bottom: ${props => props.small ? "unset" : "16px"};
-  border-bottom: ${props => props.small ? "" : "1px solid #EBEBEB"};
+  padding-bottom: ${props => props.small || props.cart ? "unset" : "13px"};
+  margin-bottom: ${props => props.small || props.cart ? "unset" : "16px"};
+  border-bottom: ${props => props.small || props.cart ? "" : "1px solid #EBEBEB"};
 `
 
 export const ShopActions = styled.div`
   display: flex;
   align-items: center;
-  
+ 
+   
   span:first-child {
     color: #FFBC41;
     font-weight: bold;
@@ -84,7 +88,8 @@ export const ShopActions = styled.div`
 export const ProductActions = styled.div`
   display: flex;
   justify-content: space-between;
-
+  margin-bottom: 4px;
+  
   span {
     color: #FFB000;
     font-weight: bold;

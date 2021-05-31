@@ -29,7 +29,7 @@ export const StyledCheckout = styled(StyledButton)`
   min-width: 119px;
   border-radius: 8px;
   color: black;
-  font-weight: 600;
+  font-weight: bold;
 `
 
 export const StyledInfo = styled.div`

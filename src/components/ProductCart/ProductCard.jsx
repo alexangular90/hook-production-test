@@ -1,11 +1,6 @@
 import {
-    CountPrice,
-    Name,
-    Price, ProductActions,
-    ProductFooter,
-    ProductHeader,
-    StyledContent,
-    StyledCart, ShopActions
+    CountPrice, Name, Price, ProductActions, ProductFooter, ProductHeader, StyledContent,
+    StyledCart, ShopActions, PricesBlock
 } from "./StyledProductCart";
 import {svgIcons} from "../../assets/svgIcons";
 import trashIcon from '../../assets/svgIcons/trash.svg'
@@ -45,10 +40,10 @@ const ProductCart = ({name, countPrice, price, small, id, images, cart}) => {
                 <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
                     <Name children={name} small={small}/>
                     <ProductFooter cart={cart} small={small}>
-                        <div style={{display: "flex"}}>
-                            <CountPrice children={countPrice} small={small}/>
+                        <PricesBlock cart={cart}>
+                            <CountPrice children={countPrice} cart={cart} small={small}/>
                             <Price children={`£ ${price}`} small={small} cart={cart}/>
-                        </div>
+                        </PricesBlock>
                         <ShopActions>
                             {(items.find(el => el.id === id ? el.count.length !== 0 : false))
                                 ? <>

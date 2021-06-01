@@ -5,7 +5,7 @@ export const StyledCart = styled.div`
   background-color: white;
   border-radius: 8px;
   margin-bottom: ${props => props.cart ? "0" : "24px"};
-  border-bottom: ${props => props.cart ? "unset" : "1px solid #F4F3F3"};
+  border-bottom: ${props => props.cart ? "1px solid #F4F3F3" : "unset"};
 `
 
 export const StyledContent = styled.div`
@@ -44,10 +44,21 @@ export const Name = styled.span`
   height: ${props => props.small ? "36px" : "41px"};
   width: 80%;
 `
+
+export const PricesBlock = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: ${props => props.cart ? "row-reverse" : "column"};
+  
+  > span {
+    margin-right: 6px;
+  }
+`
+
 export const CountPrice = styled.span`
   font-size: ${props => props.small || props.cart ? "0.75em" : "1em"};
   font-family: "Noto Sans Regular", sans-serif;
-  margin-bottom: 7px;
+  margin-bottom: ${props => props.cart ? "0" : "7px"};
   color: #999999;
 `
 
@@ -71,13 +82,13 @@ export const ProductFooter = styled.div`
 export const ShopActions = styled.div`
   display: flex;
   align-items: center;
- 
-   
+
+
   span:first-child {
     color: #FFBC41;
     font-weight: bold;
   }
-  
+
   > span {
     font-weight: bold;
     padding-left: 12px;
@@ -89,7 +100,7 @@ export const ProductActions = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 4px;
-  
+
   span {
     color: #FFB000;
     font-weight: bold;

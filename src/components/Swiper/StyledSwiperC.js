@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const CartImage = styled.img`
-  height: 50px;
+  height: 70px;
 `
 

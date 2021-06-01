@@ -1,6 +1,6 @@
 import {
     CountPrice, Name, Price, ProductActions, ProductFooter, ProductHeader, StyledContent,
-    StyledCart, ShopActions, PricesBlock
+    StyledCart, ShopActions, PricesBlock, ProductBody
 } from "./StyledProductCart";
 import {svgIcons} from "../../assets/svgIcons";
 import trashIcon from '../../assets/svgIcons/trash.svg'
@@ -37,8 +37,9 @@ const ProductCart = ({name, countPrice, price, small, id, images, cart}) => {
                     <ProductHeader>{svgIcons.map((item, index) => <span
                         key={index}>{item.path}</span>)}</ProductHeader>}
                 <SwiperC cart={cart} images={images} small={small}/>
-                <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
-                    <Name children={name} small={small}/>
+                <ProductBody>
+                    <Name children={cart ? `${name.substr(0, 20)}...` : name}
+                          small={small} cart={cart}/>
                     <ProductFooter cart={cart} small={small}>
                         <PricesBlock cart={cart}>
                             <CountPrice children={countPrice} cart={cart} small={small}/>
@@ -54,7 +55,7 @@ const ProductCart = ({name, countPrice, price, small, id, images, cart}) => {
                             <Button onClick={addItem} small={small} img={addIcon}/>
                         </ShopActions>
                     </ProductFooter>
-                </div>
+                </ProductBody>
                 {small || cart
                     ? <></>
                     : <ProductActions>

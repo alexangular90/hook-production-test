@@ -5,11 +5,27 @@ export const StyledButton = styled.button`
   width: ${props => props.small ? "24px" : "38px"};
   border-radius: 38px;
   border: unset;
-  background-color: ${props => props.secondary ? "#F4F3F3" : "#FFB000"};
+  background-color: ${props => {
+    if (props.secondary) {
+      return "#F4F3F3"
+    } else if (props.onlyIcon) {
+      return "unset"
+    } else if (!props.secondary && !props.icon) {
+      return "#FFBC41"
+    }
+  }};
   background-image: url(${props => props.img ? props.img : ''});
   background-repeat: no-repeat;
   background-position: center;
-  background-size:${props => props.small ? "10px" : "16px"};
+  background-size: ${props => {
+    if (props.small) {
+      return "10px"
+    } else if (props.onlyIcon) {
+      return "22px"
+    } else if (!props.secondary && !props.icon) {
+      return "13px"
+    }
+  }};
   color: white;
   font-weight: 500;
 `

@@ -17,6 +17,12 @@ export const StyledContent = styled.div`
   font-family: "Noto Sans Regular", sans-serif;
 `
 
+export const ProductBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+
 export const ProductImage = styled.img`
   object-fit: contain;
   height: ${props => props.small ? "100px" : "190px"};
@@ -41,8 +47,11 @@ export const ProductHeader = styled.div`
 export const Name = styled.span`
   font-size: ${props => props.small ? "0.8125em" : "1em"};
   margin-bottom: 13px;
-  height: ${props => props.small ? "36px" : "41px"};
+  height: ${props => props.small ? "36px" : "unset"};
   width: 80%;
+  // white-space: ${props => props.cart ? "nowrap" : "unset"}; /* Запрещаем перенос строк */
+  // overflow: hidden; /* Обрезаем все, что не помещается в область */
+  // text-overflow: ellipsis; /* Добавляем многоточие */
 `
 
 export const PricesBlock = styled.div`

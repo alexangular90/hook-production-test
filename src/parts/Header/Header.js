@@ -1,18 +1,19 @@
 import {Back, Content, StyledHeader, Title} from "./StyledHeader";
 import backArrow from '../../assets/svgIcons/backArrow.svg'
 import {useSelector} from "react-redux";
-import {useHistory} from 'react-router-dom'
+import {useHistory, useLocation} from 'react-router-dom'
 
 const Header = () => {
     const resize = useSelector(state => state.utils.resize)
     const history = useHistory()
+    const location = useLocation()
 
     return (
         <>
             <StyledHeader resize={resize}/>
             <Content>
                 <Back src={backArrow} onClick={history.goBack}/>
-                <Title children={"Milk & Cheese"}/>
+                <Title children={location.pathname === '/' ? "Milk & Cheese" : 'Cart'}/>
             </Content>
         </>
 

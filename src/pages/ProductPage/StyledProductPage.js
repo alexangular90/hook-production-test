@@ -5,6 +5,7 @@ export const StyledProductPageWrapper = styled.div`
   padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 90px;
 
   > div:first-child {
     margin-top: 60px;

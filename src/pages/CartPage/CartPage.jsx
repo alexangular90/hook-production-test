@@ -20,6 +20,7 @@ import InfoGrid from "../../parts/StyledInfoGrid/InfoGrid";
 const CartPage = () => {
     const items = useSelector(state => state.cartData.items)
     const totalPrice = useSelector(state => state.cartData.totalPrice)
+    const bigDecimal = require('js-big-decimal');
 
     return (
         <StyledCartWrapper>
@@ -53,11 +54,12 @@ const CartPage = () => {
                     <StyledCart>
                         <InfoGridWrapper>
                             <InfoGrid>
-                                <RowInfo name={"Order:"} value={4}/>
-                                <RowInfo name={"Delivery"} value={0.4}/>
-                                <RowInfo promocode name={"PromoCode"} value={4}/>
+                                <RowInfo name={"Order:"} value={`£ ${totalPrice}`}/>
+                                <RowInfo name={"Delivery"} value={"£ 0.4"}/>
+                                <RowInfo promocode name={"PromoCode"} value={"- £ 0.4"}/>
                                 <StyledTotalPrice>
-                                    <RowInfo name={"Total"} value={totalPrice}/>
+                                    <RowInfo name={"Total"}
+                                             value={bigDecimal.subtract(totalPrice, 0.4)}/>
                                 </StyledTotalPrice>
                             </InfoGrid>
                         </InfoGridWrapper>

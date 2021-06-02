@@ -4,6 +4,10 @@ import NotoSansBold from './assets/fonts/Noto_Sans/NotoSans-Bold.ttf';
 import NotoSansRegular from './assets/fonts/Noto_Sans/NotoSans-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`
+  a {
+    text-decoration: none;
+  }
+  
   body {
     margin: 0;
     font-size: 16px;

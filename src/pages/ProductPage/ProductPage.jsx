@@ -9,8 +9,8 @@ import {
     StyledOther,
     StyledProductPageWrapper
 } from "./StyledProductPage";
-import ProductCart from "../../components/ProductCart/ProductCard";
-import {StyledCart} from "../../components/ProductCart/StyledProductCart";
+import ProductCart from "../../components/ProductCard/ProductCard";
+import {StyledCart} from "../../components/ProductCard/StyledProductCart";
 import {useState} from "react";
 import InfoGrid from "../../parts/StyledInfoGrid/InfoGrid";
 import RowInfo from "../../parts/StyledInfoGrid/RowInfo/RowInfo";

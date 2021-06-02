@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {StyledContent} from "../../components/ProductCart/StyledProductCart";
+import {StyledContent} from "../../components/ProductCard/StyledProductCart";
 
 export const StyledProductPageWrapper = styled.div`
   padding-right: 24px;

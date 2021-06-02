@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
 
 import "./SwiperCStyle.css";
-import {ProductImage} from "../ProductCart/StyledProductCart";
+import {ProductImage} from "../ProductCard/StyledProductCart";
 import {CartImage} from "./StyledSwiperC";
 
 SwiperCore.use([Pagination]);

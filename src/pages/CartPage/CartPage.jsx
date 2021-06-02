@@ -1,6 +1,6 @@
 import {useSelector} from "react-redux";
-import ProductCart from "../../components/ProductCart/ProductCard";
-import {StyledCart} from "../../components/ProductCart/StyledProductCart";
+import ProductCart from "../../components/ProductCard/ProductCard";
+import {StyledCart} from "../../components/ProductCard/StyledProductCart";
 import {
     DeliveryHeader,
     InputsGrid,
@@ -64,7 +64,6 @@ const CartPage = () => {
                     </StyledCart>
                 </>
                 : <></>}
-
         </StyledCartWrapper>
     )
 }

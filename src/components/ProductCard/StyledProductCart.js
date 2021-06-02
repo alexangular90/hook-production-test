@@ -119,9 +119,9 @@ export const ProductActions = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 4px;
-
-  span {
-    color: #FFB000;
-    font-weight: bold;
-  }
+  
+    a {
+      color: #FFB000;
+      font-weight: bold;
+    }
 `

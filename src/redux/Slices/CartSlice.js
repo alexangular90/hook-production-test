@@ -1,5 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit'
-
 const bigDecimal = require('js-big-decimal');
 
 Array.prototype.addItem = function (item) {

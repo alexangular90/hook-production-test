@@ -16,36 +16,44 @@
       "Ultrices at egestas tempus",
       "Duis egestas semper dolor morbi purus."
     ],
-    "kkal": {
-      "amount": 28,
-      "unit": null,
-      "rl": 4
-    },
-    "Proteins": {
-      "amount": 1.3,
-      "unit": "g",
-      "rl": 10
-    },
-    "fats": {
-      "amount": 0,
-      "unit": "g",
-      "rl": 12
-    },
-    "carbs": {
-      "amount": 28,
-      "unit": null,
-      "rl": 10
-    },
-    "niacin": {
-      "amount": 6.4,
-      "unit": "mg",
-      "rl": 40
-    },
-    "vitamin_B6": {
-      "amount": 0.8,
-      "unit": "g",
-      "rl": 57
-    }
+    "energyValues": [
+      {
+        "name": "kkal",
+        "amount": 28,
+        "unit": "",
+        "rl": 4
+      },
+      {
+        "name": "Proteins",
+        "amount": 1.3,
+        "unit": "g",
+        "rl": 10
+      },
+      {
+        "name": "fats",
+        "amount": 0,
+        "unit": "g",
+        "rl": 12
+      },
+      {
+        "name": "carbs",
+        "amount": 28,
+        "unit": "",
+        "rl": 10
+      },
+      {
+        "name": "niacin",
+        "amount": 6.4,
+        "unit": "mg",
+        "rl": 40
+      },
+      {
+        "name": "vitamin_B6",
+        "amount": 0.8,
+        "unit": "g",
+        "rl": 57
+      }
+    ]
   },
   "buyWithThisProduct": [
     {
@@ -83,15 +91,43 @@
     }
   ],
   "ingredients": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices at egestas tempus duis egestas semper dolor morbi purus. ",
-  "other": {
-    "originCountry": "Россия",
-    "contains": [
-      "цельное молоко"
-    ]
-  },
-  "shelfLife": 12,
-  "shaper": "ОАО \"Компания \"Юнимилк\"",
-  "fatness": 4.5,
-  "lactoseContent": "обычное (более 1% лактозы)",
-  "fortified": false
+  "other": [
+    {
+      "name": "Страна производства",
+      "value": "Россия",
+      "unit": ""
+    },
+    {
+      "name": "Состав",
+      "value": [
+        "цельное молоко"
+      ],
+      "unit": ""
+    },
+    {
+      "name": "Срок годности",
+      "value": 12,
+      "unit": "дн."
+    },
+    {
+      "name": "Изготовитель",
+      "value": "ОАО \"Компания \"Юнимилк\"",
+      "unit": ""
+    },
+    {
+      "name": "Жирность",
+      "value": 4.5,
+      "unit": "%"
+    },
+    {
+      "name": "Содержание лактозы",
+      "value": "обычное (более 1% лактозы)",
+      "unit": ""
+    },
+    {
+      "name": "Витаминизированное/\nобогащенное",
+      "value": "нет",
+      "unit": ""
+    }
+  ]
 }

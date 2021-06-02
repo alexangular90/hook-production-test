@@ -15,7 +15,9 @@ const SwiperC = ({small, images, cart}) => {
     return (
         <React.Fragment>
             {cart
-                ? <CartImage cart={cart} src={images[0]} alt=""/>
+                ? <div style={{paddingRight: "10px"}}>
+                    <CartImage cart={cart} src={images[0]} alt=""/>
+                </div>
                 : <Swiper pagination={true} className="mySwiper">
                     {images?.map((item, index) =>
                         <SwiperSlide key={index}>

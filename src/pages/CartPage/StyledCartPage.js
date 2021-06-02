@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {StyledProductPageWrapper} from "../ProductPage/StyledProductPage";
-import {StyledPaymentInfo} from "../../parts/PaymentInfo/StyledPaymentInfo";
 
 export const StyledCartWrapper = styled(StyledProductPageWrapper)`
 `
@@ -21,6 +20,10 @@ export const DeliveryHeader = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 19px;
+
+  > span {
+    font-weight: bold;
+  }
 `
 
 export const InputsGrid = styled.div`
@@ -34,11 +37,11 @@ export const InputsGrid = styled.div`
   }
 `
 
-export const StyledPayments = styled(StyledDeliveryAddress)`
+export const StyledInfoGrid = styled.div`
   display: grid;
   grid-area: prices;
   grid-template-areas: "prices";
-  gap: 10px;
+  gap: ${({info}) => info ? "13px" : "7px"};
 `
 
 export const StyledTotalPrice = styled.div`
@@ -47,5 +50,24 @@ export const StyledTotalPrice = styled.div`
     font-weight: bold;
     margin-top: 24px;
   }
+`
 
+export const InfoGridWrapper = styled.div`
+  padding: 15px;
+`
+
+export const StyledPaymentTitle = styled.span`
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+`
+
+export const StyledEmptyCart = styled.div`
+  padding: 55px;
+  text-align: center;
+
+  > span {
+    font-weight: bold;
+    font-size: 25px;
+  }
 `

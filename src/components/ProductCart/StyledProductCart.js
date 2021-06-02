@@ -10,7 +10,7 @@ export const StyledCart = styled.div`
 
 export const StyledContent = styled.div`
   display: flex;
-  max-height: ${props => props.small ? "228px" : "460px"};
+  //max-height: ${props => props.small ? "228px" : "460px"};
   width: ${props => props.small ? "152px" : ""};
   flex-direction: ${props => props.cart ? "row" : "column"};;
   padding: ${props => props.cart ? "12px 14px 12px 14px" : "10px 16px 10px 16px"};
@@ -33,13 +33,22 @@ export const ProductHeader = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 14px;
+  position: relative;
+  
 
   svg {
     margin-right: 6px;
-
+    vertical-align: middle;
+    
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  button {
+    right: -9px;
+    top: -6px;
+    position: absolute;
   }
 `
 
@@ -48,17 +57,18 @@ export const Name = styled.span`
   font-size: ${props => props.small ? "0.8125em" : "1em"};
   margin-bottom: 13px;
   height: ${props => props.small ? "36px" : "unset"};
-  width: 80%;
-  // white-space: ${props => props.cart ? "nowrap" : "unset"}; /* Запрещаем перенос строк */
+  width: ${props => props.cart ? "" : "80%"};
+    // white-space: ${props => props.cart ? "nowrap" : "unset"}; /* Запрещаем перенос строк */
   // overflow: hidden; /* Обрезаем все, что не помещается в область */
   // text-overflow: ellipsis; /* Добавляем многоточие */
 `
 
 export const PricesBlock = styled.div`
   display: flex;
-  align-items: center;
+  //align-items: ${props => props.small ? "center" : ""};
   flex-direction: ${props => props.cart ? "row-reverse" : "column"};
-  
+  white-space: ${props => props.cart ? "nowrap" : ""};
+
   > span {
     margin-right: 6px;
   }

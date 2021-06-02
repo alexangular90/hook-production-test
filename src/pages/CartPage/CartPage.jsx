@@ -59,7 +59,7 @@ const CartPage = () => {
                                 <RowInfo promocode name={"PromoCode"} value={"- £ 0.4"}/>
                                 <StyledTotalPrice>
                                     <RowInfo name={"Total"}
-                                             value={bigDecimal.add(bigDecimal.subtract(totalPrice, 0.8), 0.4)}/>
+                                             value={bigDecimal.add(bigDecimal.subtract(totalPrice, 0.4), 0.8)}/>
                                 < /StyledTotalPrice>
                             </InfoGrid>
                         </InfoGridWrapper>
